@@ -150,7 +150,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Bob.cpp" />
+    <ClCompile Include="src\Draw.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Input.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\PlayableCharacter.cpp" />
+    <ClCompile Include="src\TextureHolder.cpp" />
+    <ClCompile Include="src\Thomas.cpp" />
+    <ClCompile Include="src\Update.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Bob.h" />
+    <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\PlayableCharacter.h" />
+    <ClInclude Include="src\TextureHolder.h" />
+    <ClInclude Include="src\Thomas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
