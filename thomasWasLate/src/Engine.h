@@ -3,6 +3,11 @@
 #include "TextureHolder.h"
 #include "Thomas.h"
 #include "Bob.h"
+#include "LevelManager.h"
+#include "SoundManager.h"
+#include "HUD.h"
+#include "ParticleSystem.h"
+
 
 using namespace sf;
 
@@ -12,9 +17,22 @@ private:
 	// The texture holder
 	TextureHolder th;
 
+	ParticleSystem m_PS;
+
 	// Thomas and Bob
 	Thomas m_Thomas;
 	Bob m_Bob;
+
+	// A class to manage all the levels
+	LevelManager m_LM;
+
+	// Sound manager class
+	SoundManager m_SM;
+
+	// The HUD
+	HUD m_HUD;
+	int m_FramesSinceLastHUDUpdate = 0;
+	int m_TargetFramesPerHUDUpdate = 500;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
@@ -41,6 +59,9 @@ private:
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
 
+	// Declare a shader for the background
+	Shader m_RippleShader;
+
 	// Is the game currently playing?
 	bool m_Playing = false;
 
@@ -57,10 +78,27 @@ private:
 	// Is it time for a new/first level?
 	bool m_NewLevelRequired = true;
 
+	VertexArray m_VALevel;
+
+	int** m_ArrayLevel = NULL;
+
+	Texture m_TextureTiles;
+
 	// Private functions for internal use only
 	void input();
 	void update(float dtAsSeconds);
 	void draw();
+
+	// Load a new level
+	void loadLevel();
+
+	// Run will call all the private functions
+	bool detectCollisions(PlayableCharacter& character);
+
+	// Make a vector of the best places to emit sound from
+	void populateEmitters(vector<Vector2f>& vSoundEmitters, int** arrayLevel);
+
+	vector<Vector2f> m_FireEmitters;
 
 public:
 	// The Engine constructor

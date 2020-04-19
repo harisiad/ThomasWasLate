@@ -151,11 +151,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Bob.cpp" />
+    <ClCompile Include="src\DetectCollisions.cpp" />
     <ClCompile Include="src\Draw.cpp" />
     <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\HUD.cpp" />
     <ClCompile Include="src\Input.cpp" />
+    <ClCompile Include="src\LevelManager.cpp" />
+    <ClCompile Include="src\LoadLevel.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Particle.cpp" />
+    <ClCompile Include="src\ParticleSystem.cpp" />
     <ClCompile Include="src\PlayableCharacter.cpp" />
+    <ClCompile Include="src\PopulateEmitters.cpp" />
+    <ClCompile Include="src\SoundManager.cpp" />
     <ClCompile Include="src\TextureHolder.cpp" />
     <ClCompile Include="src\Thomas.cpp" />
     <ClCompile Include="src\Update.cpp" />
@@ -163,7 +171,12 @@
   <ItemGroup>
     <ClInclude Include="src\Bob.h" />
     <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\HUD.h" />
+    <ClInclude Include="src\LevelManager.h" />
+    <ClInclude Include="src\Particle.h" />
+    <ClInclude Include="src\ParticleSystem.h" />
     <ClInclude Include="src\PlayableCharacter.h" />
+    <ClInclude Include="src\SoundManager.h" />
     <ClInclude Include="src\TextureHolder.h" />
     <ClInclude Include="src\Thomas.h" />
   </ItemGroup>
